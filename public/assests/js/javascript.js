@@ -2,14 +2,14 @@
 $(function() {
     $(".devour").on("click", function(event) {
       var id = $(this).data("id");
-      var devourState = $(this).data("devour");
+      var devourState = $(this).data("devourstate");
   
       var devour = {
         devoured: devourState
       };
   
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devour
       }).then(
@@ -30,7 +30,7 @@ $(function() {
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
       }).then(
